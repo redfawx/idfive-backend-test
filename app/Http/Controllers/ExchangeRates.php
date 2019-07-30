@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use App\Entry;
 use Session;
 use Redirect;
@@ -48,12 +49,14 @@ class ExchangeRates extends Controller
             $entry->date = $exchangeApi['date'];
             $entry->save();
         }
-
-
-        dd('Set Conversion Rate: ' . $base . ', ' . $target . ', ' . $targetRate);
         
+    }
 
-        
+    public function store(Request $request)
+    {
+        $this -> createEntry(Input::get('base'), Input::get('target'));
+        // redirect
+        return Redirect::to('admin');
     }
 
     public function destroy($id)
@@ -62,7 +65,6 @@ class ExchangeRates extends Controller
         $entry->delete();
 
         // redirect
-        // Session::flash('message', 'Successfully signed out guest!');
         return Redirect::to('admin');
     }
     

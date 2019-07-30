@@ -1,8 +1,9 @@
 @include('layout.header')
 
 <div class="select-bar">
+    {{ Form::open(array('url' => 'entries')) }}
     <div class="drop-down">
-        <select>
+        <select name="base">
             <option value="" disabled selected>Select a base currency</option>
             <option value="AUD">AUD</option>
             <option value="BGN">BGN</option>
@@ -40,7 +41,7 @@
         </select>
     </div>
     <div class="drop-down">
-        <select>
+        <select name="target">
             <option value="" disabled selected>Select a target currency</option>
             <option value="AUD">AUD</option>
             <option value="BGN">BGN</option>
@@ -78,7 +79,8 @@
         </select>
     </div>
 
-    <button class="add-btn" type="button">Convert!</button>
+    {{ Form::submit('Convert!', array('class' => 'add-btn')) }}
+    {{ Form::close() }}
 </div>
 
 <table class="admin-table">
@@ -94,7 +96,7 @@
     </thead>
 
     <tbody>
-        @foreach($entries as $key => $entry)
+        @foreach($entries->sortByDesc('created_at') as $key => $entry)
             <tr>
                 <td>{{$entry->base}}</td>
                 <td>{{$entry->target}}</td>
@@ -104,7 +106,7 @@
                 <td>
                 {{ Form::open(array('url' => 'entries/' . $entry->id)) }}
                     {{ Form::hidden('_method', 'DELETE') }}
-                    {{ Form::submit('Remove'), array('class' => 'remove-btn') }}
+                    {{ Form::submit('Remove', array('class' => 'remove-btn' )) }}
                 {!! Form::close() !!}
                 </td>
             </tr>

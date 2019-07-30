@@ -10696,12 +10696,14 @@ body {
   -moz-appearance: none !important;
   appearance: none !important;
   border: none;
-  background-color: transparent;
-  max-width: 200px;
-  text-align: center;
-  width: 100%;
-  max-width: 40px;
-  color: #ff8806;
+  background-color: #f09533;
+  border-radius: 0.5em !important;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 90vw;
+  min-height: 55px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .select-bar {
