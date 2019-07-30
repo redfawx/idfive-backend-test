@@ -16,7 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('/admin', function () {
-    return view('admin');
+    $entries = DB::table('entries')->get();
+    return view('admin', ['entries' => $entries]);
 });
 
 Route::get('/exchange/{slug}/{target}', 'ExchangeRates@createEntry');
