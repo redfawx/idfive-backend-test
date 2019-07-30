@@ -21,3 +21,5 @@ Route::get('/admin', function () {
 });
 
 Route::get('/exchange/{slug}/{target}', 'ExchangeRates@createEntry');
+
+Route::resource('entries', 'ExchangeRates');

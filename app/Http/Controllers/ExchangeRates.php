@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Entry;
+use Session;
+use Redirect;
 
 class ExchangeRates extends Controller
 {
@@ -52,6 +54,16 @@ class ExchangeRates extends Controller
         
 
         
+    }
+
+    public function destroy($id)
+    {
+        $entry = Entry::find($id);
+        $entry->delete();
+
+        // redirect
+        // Session::flash('message', 'Successfully signed out guest!');
+        return Redirect::to('admin');
     }
     
 
