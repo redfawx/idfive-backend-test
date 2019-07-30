@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Entry;
 
 class ExchangeRates extends Controller
 {
@@ -14,22 +15,42 @@ class ExchangeRates extends Controller
      */
     public function createEntry($base, $target)
     {
-        // $entry = new Entry;
-        // $entry->host_id = $request->host;
-        // $entry->save();
 
-        
-        $json = json_decode(file_get_contents('https://api.exchangeratesapi.io/latest?base=' . $base), true);
-        
-        dd($json['rates']);
+        //force both requested values to uppercase to work with Third-Party API
+        $base = strtoupper($base);
+        $target = strtoupper($target);
 
-        foreach($json['rates'] as $item)
-        {
-           
-                dd($item);
-            
+        //declare variable to hold API information
+        $exchangeApi = null;
+        //instantiate variable via API
+        $exchangeApi = json_decode(file_get_contents('https://api.exchangeratesapi.io/latest?base=' . $base), true);
+
+        //declare variable to give us desired value we're looking for
+        $targetRate = null;
+
+        //logically get the conversion rate if it exsists otherwise fail with error
+        if(isset($exchangeApi['rates'][$target])){
+            $targetRate = $exchangeApi['rates'][$target];
+        }else if($base == $target){
+            $targetRate = 1;
+        }else{
+            dd('The desired exchange rate could not be found');
         }
-        // dd($json['rates']);
+        
+        //check to make sure that the conversion rate has been set if so then create the entry in the database
+        if($targetRate != null){
+            $entry = new Entry;
+            $entry->base = $base;
+            $entry->target = $target;
+            $entry->rate = $targetRate;
+            $entry->date = $exchangeApi['date'];
+            $entry->save();
+        }
+
+
+        dd('Set Conversion Rate: ' . $base . ', ' . $target . ', ' . $targetRate);
+        
+
         
     }
     
