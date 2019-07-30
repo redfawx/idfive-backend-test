@@ -44,7 +44,7 @@ body{
     text-align: center;
     width: 100%;
     max-width: 40px;
-    color: #e60303;
+    color: #ff8806;
 }
 
 .select-bar{
@@ -68,6 +68,7 @@ body{
             text-align: center;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06);
             text-align-last:center;
+            min-height: 55px;
         }
     }
     
@@ -76,8 +77,8 @@ body{
 .add-btn{
     background-color: #339af0;
     border-radius: .5em !important;
-    padding: 15px 10px;
     color: white;
+    border: none;
     padding: 10px;
     width: 90vw;
     min-height: 55px;

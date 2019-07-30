@@ -78,7 +78,7 @@
         </select>
     </div>
 
-    <button class="add-btn" type="button">Add Conversion Rate</button>
+    <button class="add-btn" type="button">Convert!</button>
 </div>
 
 <table class="admin-table">
@@ -170,7 +170,7 @@
                     </svg>
                 </button></td>
         </tr>
-        
+
         
     </tbody>
 </table>
