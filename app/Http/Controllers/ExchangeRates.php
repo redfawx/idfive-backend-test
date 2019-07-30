@@ -35,7 +35,10 @@ class ExchangeRates extends Controller
         if(isset($exchangeApi['rates'][$target])){
             $targetRate = $exchangeApi['rates'][$target];
         }else if($base == $target){
-            $targetRate = 1;
+            //validate that there is a set value for each parameter
+            if($base != '' && $target != ''){
+                $targetRate = 1;
+            }
         }else{
             dd('The desired exchange rate could not be found');
         }

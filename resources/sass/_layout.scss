@@ -4,3 +4,34 @@ body{
     width: 100vw;
     height: 100vh;
 }
+
+.header{
+    background-image: url(/imgs/bg.jpg);
+    background-size: cover;
+    min-height: 400px;
+    .content{
+        background-color: #044158a8;
+        height: 400px;
+        position: relative;
+        display: flex;
+        padding: 30px 0;
+        #message{
+            width: 90%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: auto;
+            margin-bottom: auto;
+            background-color: #ffffffe3;
+            padding: 28px;
+            border-radius: .3em;
+            text-align: center;
+            h3{
+                font-size: 2em;
+            }
+            p{
+                padding-bottom: 15px;
+            }
+        }
+    }
+}

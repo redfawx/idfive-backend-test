@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $entries = DB::table('entries')->get();
+    return view('home', ['entries' => $entries]);
 });
 
 Route::get('/admin', function () {

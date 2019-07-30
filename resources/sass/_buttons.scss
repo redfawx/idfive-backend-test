@@ -23,12 +23,35 @@ input{
     width: 90vw;
     min-height: 55px;
     box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06);
+    font-size: 1em;
+    font-weight: 200;
 }
 
 .select-bar{
+    
     text-align: center;
-    background: $white;
     padding: 30px 0;
+    background-color: #044158a8;
+    min-height: 400px;
+    position: relative;
+
+    a{
+        color: white;
+        text-decoration: none;
+        position: absolute;
+        left: 50%;
+        bottom: 88px;
+        transform: translate(-50%, -50%);
+    }
+
+    form{
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
 
     .drop-down{
         margin: 0 20px 0 20px;
@@ -36,6 +59,8 @@ input{
             display: block;
         }
         select{
+            font-size: 1em;
+            font-weight: 200;
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
@@ -55,7 +80,9 @@ input{
     
 }
 
-.add-btn{
+.blue-btn{
+    font-size: 1em;
+    font-weight: 400;
     background-color: $blue;
     border-radius: .5em ;
     color:$white;

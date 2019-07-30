@@ -9,6 +9,41 @@ body {
   height: 100vh;
 }
 
+.header {
+  background-image: url(/imgs/bg.jpg);
+  background-size: cover;
+  min-height: 400px;
+}
+
+.header .content {
+  background-color: #044158a8;
+  height: 400px;
+  position: relative;
+  display: flex;
+  padding: 30px 0;
+}
+
+.header .content #message {
+  width: 90%;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  background-color: #ffffffe3;
+  padding: 28px;
+  border-radius: 0.3em;
+  text-align: center;
+}
+
+.header .content #message h3 {
+  font-size: 2em;
+}
+
+.header .content #message p {
+  padding-bottom: 15px;
+}
+
 table {
   border-collapse: collapse;
 }
@@ -23,40 +58,44 @@ td {
   padding: 4px;
 }
 
-.admin-table {
+.exchange-table {
   width: 100%;
   color: #9b9fa4;
   background-color: #fff;
 }
 
-.admin-table thead {
+.exchange-table thead {
   background-color: #1a1f23;
   border-bottom: 6px solid #0ca4ff;
   font-weight: bold;
 }
 
-.admin-table tbody {
+.exchange-table tbody {
   color: #6f6f6f;
 }
 
-.admin-table th {
+.exchange-table th {
   padding: 30px 10px;
 }
 
-.admin-table td {
+.exchange-table td {
   padding: 10px;
   border: solid 1px #d8d8d8;
 }
 
-.admin-table td:last-child {
+.exchange-table td:last-child {
   text-align: center;
 }
 
-.admin-table td .remove-btn {
+.exchange-table td .remove-btn {
   width: 100%;
 }
 
-.admin-table tr:nth-child(even) {
+.exchange-table tr {
+  height: 75px;
+}
+
+.exchange-table tr:nth-child(even) {
   background: #ebebeb;
 }
 
@@ -88,12 +127,33 @@ input {
   width: 90vw;
   min-height: 55px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  font-size: 1em;
+  font-weight: 200;
 }
 
 .select-bar {
   text-align: center;
-  background: #fff;
   padding: 30px 0;
+  background-color: #044158a8;
+  min-height: 400px;
+  position: relative;
+}
+
+.select-bar a {
+  color: white;
+  text-decoration: none;
+  position: absolute;
+  left: 50%;
+  bottom: 88px;
+  transform: translate(-50%, -50%);
+}
+
+.select-bar form {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .select-bar .drop-down {
@@ -105,6 +165,8 @@ input {
 }
 
 .select-bar .drop-down select {
+  font-size: 1em;
+  font-weight: 200;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -122,7 +184,9 @@ input {
   min-height: 55px;
 }
 
-.add-btn {
+.blue-btn {
+  font-size: 1em;
+  font-weight: 400;
   background-color: #3490dc;
   border-radius: 0.5em;
   color: #fff;
