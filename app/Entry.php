@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Entries extends Model
+class Entry extends Model
 {
     protected $fillable = [
         'base', 'target', 'rate', 'date'
