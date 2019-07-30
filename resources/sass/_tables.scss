@@ -1,29 +1,52 @@
-.admin-table{
+//defaults
+table {
+    border-collapse: collapse;
+}
+
+tr {
+    border-bottom: 1px solid #ccc;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 4px;
+}
+
+
+.admin-table {
     width: 100%;
     color: #9b9fa4;
     background-color: #fff;
-    thead{
-        background-color:#1a1f23;
+
+    thead {
+        background-color: #1a1f23;
         border-bottom: 6px solid #0ca4ff;
         font-weight: bold;
     }
-    tbody{
-        color:#6f6f6f;
+
+    tbody {
+        color: #6f6f6f;
     }
-    th{
+
+    th {
         padding: 30px 10px
     }
-    td{
-        &:last-child{
+
+    td {
+        &:last-child {
             text-align: center;
         }
+
         padding: 10px;
-        
+
         border: solid 1px #d8d8d8;
-        .remove-btn{
+
+        .remove-btn {
             width: 100%;
         }
     }
+
     tr:nth-child(even) {
         background: #ebebeb
     }
